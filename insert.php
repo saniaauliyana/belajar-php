@@ -24,6 +24,7 @@ if (isset($_POST["submit"])) {
     //jalankan query
     if (mysqli_query($con, $sql)) {
         echo "Data berhasil ditambahkan";
+        header("location:index.php");
     } else {
         echo "ada error" . $sql .mysqli_error($con);
     }
@@ -55,6 +56,7 @@ if (isset($_POST["submit"])) {
                 <p>
                     Silahkan isi form dengan benar.
                 </p>
+                <img width="400" height="300" src="https://images.pexels.com/photos/1454360/pexels-photo-1454360.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="">
             </div>
             <div class="col peding-30">
                 <form action="insert.php" method="post">

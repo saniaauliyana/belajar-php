@@ -71,15 +71,20 @@ mysqli_close($con);
                     <th>Tempat Lahir</th>
                     <th>Tanggal Lahir</th>
                     <th>Alamat</th>
+                    <th>Aksi</th>
                 </tr>
-                <?php foreach ($mahasiswa as $value) : ?>
+                <?php foreach ($mahasiswa as $row) : ?>
                     <tr>
-                        <td><?php echo $value["nim"]; ?></td>
-                        <td><?php echo $value["nama"]; ?></td>
-                        <td><?php echo $value["jenis_kelamin"]; ?></td>
-                        <td><?php echo $value["tempat_lahir"]; ?></td>
-                        <td><?php echo $value["tanggal_lahir"]; ?></td>
-                        <td><?php echo $value["alamat"]; ?></td>
+                        <td><?php echo $row["nim"]; ?></td>
+                        <td><?php echo $row["nama"]; ?></td>
+                        <td><?php echo $row["jenis_kelamin"]; ?></td>
+                        <td><?php echo $row["tempat_lahir"]; ?></td>
+                        <td><?php echo $row["tanggal_lahir"]; ?></td>
+                        <td><?php echo $row["alamat"]; ?></td>
+                        <td>
+                            <a href="update.php?id=<?= $row['id'] ?>" >Edit</a> | 
+                            <a href="delete.php?id=<?= $row['id'] ?>" >Delete</a>
+                        </td>
                     </tr>
                 <?php endforeach; ?>
             </table>
